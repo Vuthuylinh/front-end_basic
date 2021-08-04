@@ -1,55 +1,23 @@
+# JQuery
 ### Code Academy account
 https://www.codecademy.com/courses/learn-jquery/lessons/jquery-setup/exercises/jquery-methods
 
 ---
-# jQuery Introduction
+<details>
+  <summary>jQuery Introduction</summary>
+
 - jQuery, a JavaScript library that makes it easy to add dynamic behavior to HTML elements.
 
-- Example:
+ - Example:
   ```js
     $('.login-button').on('click',()=>{   // not correct if have space between arrow and curly bracket
         $('.login-form').toggle();
     });
 
   ```
-### jQuery methods
-  -  jQuery methods to add dynamic behavior, such as `.hide()`, `.show()`, .`fadeIn()`, .`fadeOut()` etc., to HTML elements.
-  -  What jQuery methods should I be familiar with?
-#### effect methods:
-- .animate()
-- .delay()
-- These methods instantly hide or show elements on a web page:
-    * .hide()
-    * .show()
-    * .toggle() - do both hide and show
-- These methods make elements disappear or appear over a given period of time.
-    * .fadeIn()
-    * .fadeOut()  //If no argument is given, the default animation duration is 400 milliseconds.;
-       $('.fade-image').fadeOut(5000) => fade out in 5secs
-    * .fadeToggle() // Do both `fadeIn` and `fadeOut`
-- These methods make elements slide up or down into place over a given period of time.
-    * .slideUp()
-    * .slideDown()
-    * .slideToggle()
-
-#### event methods:
-
-#### DOM manipulation methods:
-- .addClass()/.toggleClass()
-- .after()/.before()
-- .append()/.prepend()
-- .remove()
-- .val()
-
-### Web structure
- - head: loading style
- - body:
-    * html structure
-    * behavior with script
-
 ### jQuery CDN
 - A CDN is a collection of servers that can deliver content.
-- - Need to load the jQuery library before the main.js file
+- Need to load the jQuery library before the main.js file
 ```js
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -67,7 +35,7 @@ https://www.codecademy.com/courses/learn-jquery/lessons/jquery-setup/exercises/j
    });
 ```
 ### Target elements by id and class.
-1. Target by class  `$('.someClass').handlerMethod();`
+1. Target by class `$('.someClass').handlerMethod();`
 2. Target by id: `$('#someId').hide();`
 3. Are there other ways I can target elements besides by class and by id?
     - class
@@ -78,12 +46,74 @@ https://www.codecademy.com/courses/learn-jquery/lessons/jquery-setup/exercises/j
     - group
     - chained
     - universal
-### jQuery Objects
+##### jQuery Objects
  - Example: `const $jQueryObject = $('.someClass');`
- - Notice our variable name, $jQueryObject, starts with the ($) character
+ - Notice our variable name `$jQueryObject` starts with the ($) character
 
----
-## jQuery - Event Handlers
+</details>
+
+<details>
+  <summary>jQuery methods</summary>
+
+- jQuery methods to add dynamic behavior, such as `.hide()`, `.show()`, .`fadeIn()`, .`fadeOut()` etc., to HTML elements.
+- What jQuery methods should I be familiar with?
+</details>
+
+<details>
+  <summary>Effect methods:</summary>
+
+- .animate()
+- .delay()
+- These methods instantly hide or show elements on a web page:
+    * .hide()
+    * .show()
+    * .toggle() - do both hide and show
+- These methods make elements disappear or appear over a given period of time.
+    * .fadeIn()
+    * .fadeOut()  //If no argument is given, the default animation duration is 400 milliseconds.;
+       $('.fade-image').fadeOut(5000) => fade out in 5secs
+    * .fadeToggle() // Do both `fadeIn` and `fadeOut`
+- These methods make elements slide up or down into place over a given period of time.
+    * .slideUp()
+    * .slideDown()
+    * .slideToggle()
+
+</details>
+
+<details>
+  <summary>Event methods</summary>
+
+  #### Event listeners / Event Methods
+  - mouseenter : listen to mouse `enter` - when a user enters
+  - mouseleave : when a user’s mouse leaves
+  - change
+  - click
+  - focus
+  - hover
+  - keydown
+  - keyup
+  - keypress
+  - on()
+  - ready()
+    ...
+### DOM manipulation methods:
+  - .addClass()/.toggleClass()
+  - .after()/.before()
+  - .append()/.prepend()
+  - .remove()
+  - .val()
+
+### Web structure
+ - head: loading style
+ - body:
+    * html structure
+    * behavior with script
+
+</details>
+
+<details>
+  <summary>Event Handlers</summary>
+
 - The jQuery `.on()` method adds event handlers to jQuery objects.
 - The jQuery `.addClass` method:  zoom photos in when someone hovers over them.
 - The jQuery `.removeClass` method: zoom photos out ..
@@ -101,40 +131,13 @@ $('#login').on('click', () => {
   $loginForm.show();
 })
 ```
-#### Event listeners / Event Methods
-- mouseenter : listen to mouse `enter` - when a user enters
-- mouseleave : when a user’s mouse leaves
-- change
-- click
-- focus
-- hover
-- keydown
-- keyup
-- keypress
-- on()
-- ready()
-  ...
-##### Chain event handler
- Example:
- ```js
- $('.product-photo').on('mouseenter',()=>{
-    $('.product-photo').addClass('photo-active')
-  }).on('mouseleave',()=>{
-      $('.product-photo').removeClass('photo-active')
-    })
- ```
-##### `event.currentTarget`
-- only use it inside a callback function.
-- only the current element got targeted will get effect
-- Example:
-```js
- $('.product-photo').on('mouseenter', event => {
-    $(event.currentTarget).addClass('photo-active')
-  }).on('mouseleave', event => {
-    $(event.currentTarget).removeClass('photo-active')
-  })
-```
-## Style Methods
+
+</details>
+
+
+<details>
+  <summary>Style Methods</summary>
+
 1. `.css() `
      - adjust 1 feature: ` $('.example-class').css('color', '#FFFFFF')`;
      - manage a list of features wrap in an object with value-key:
@@ -170,8 +173,12 @@ $('#login').on('click', () => {
    - and removes it if an element does already have it.
    - Syntax: `$('.example-class').toggleClass('active');`
 
-### DOM Traversing
-1. Children:
+</details>
+
+<details>
+  <summary>DOM Traversing</summary>
+
+  1. Children:
   - Syntax:
     `$('.targetClassName).children('.parentClassName).`
 2. Parent:
@@ -198,3 +205,8 @@ $('#login').on('click', () => {
 6. `.prev()` to target the element that is immediately preceding the selected element.
 7. `.find()` to target descendant elements by some selector, ie- class, id, tag etc.
 8. In addition to these methods, there are even more, including `.prevUntil()`, `.nextUntil()` and others. To get an idea, check out Mozilla Developer Network reference for jQuery Traversing.
+
+
+</details>
+
+
