@@ -25,7 +25,10 @@ Headings and sub-headings, <h1> to <h6> tags, are used to enlarge text.
            <li>Chicken</li>
         </ol>
     ```
-7. images : <img src="image-location.jpg" alt="image description/alterative text" />
+7. images :
+   ```js
+    <img src="image-location.jpg" alt="image description/alterative text" />
+  ```
 8. video:
  ```js
    <video src="myVideo.mp4" width="320" height="240" controls>
